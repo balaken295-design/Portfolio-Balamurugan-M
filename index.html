@@ -144,32 +144,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #62d9b4; outline-offs
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0e1613;
-    --surface: #15211d;
-    --ink: #e5eee9;
-    --muted: #93a79d;
-    --line: #26362f;
-    --accent: #5cc4a0;
-    --accent-ink: #08130f;
-    --copper: #e0a15b;
-    --wash: #1a2924;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0e1613;
-  --surface: #15211d;
-  --ink: #e5eee9;
-  --muted: #93a79d;
-  --line: #26362f;
-  --accent: #5cc4a0;
-  --accent-ink: #08130f;
-  --copper: #e0a15b;
-  --wash: #1a2924;
-  color-scheme: dark;
-}
+:root { color-scheme: light; --bg:#f5f7fb; --surface:#ffffff; --ink:#101828; --muted:#667085; --line:#e4e7ec; --accent:#176b58; --accent-ink:#ffffff; --copper:#b7791f; --wash:#eaf5f1; }
  
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
