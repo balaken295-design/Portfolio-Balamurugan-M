@@ -15,18 +15,7 @@
   --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0b1220; --surface: #111c2d; --ink: #eef4ff; --muted: #a5b4c8;
-    --line: #26354a; --accent: #68d8b5; --accent-ink: #06251d;
-    --copper: #f2c078; --wash: #162c2a; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0b1220; --surface: #111c2d; --ink: #eef4ff; --muted: #a5b4c8;
-  --line: #26354a; --accent: #68d8b5; --accent-ink: #06251d;
-  --copper: #f2c078; --wash: #162c2a; color-scheme: dark;
-}
+:root { color-scheme: light; --bg:#f5f7fb; --surface:#ffffff; --ink:#101828; --muted:#667085; --line:#e4e7ec; --accent:#176b58; --accent-ink:#ffffff; --copper:#b7791f; --wash:#eaf5f1; }
 html { scroll-padding-top: 90px; }
 body { font-size: 16px; line-height: 1.7; background:
   radial-gradient(ellipse at 8% 0%, rgba(23,107,88,.07), transparent 32rem), var(--bg); }
@@ -37,7 +26,6 @@ body { font-size: 16px; line-height: 1.7; background:
 .brand::before { content: "BM"; display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 10px; border-radius: 10px; color: #fff; background: #176b58; font: 700 .75rem var(--font-mono); vertical-align: middle; }
 .nav { gap: clamp(10px,1.7vw,22px); align-items: center; }
 .nav a { font-weight: 500; font-size: .88rem; transition: color .2s ease; }
-.toggle { border-radius: 999px; padding: 10px 14px; border-color: var(--line); background: var(--surface); }
 .hero {
   position: relative; isolation: isolate; overflow: hidden;
   margin-top: 30px; margin-bottom: 28px; padding: clamp(32px,6vw,76px);
@@ -118,6 +106,21 @@ a:focus-visible, button:focus-visible { outline: 3px solid #62d9b4; outline-offs
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* Project cards and Power Platform skill grouping */
+.project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; align-items:stretch; }
+.project-card { min-width:0; padding:clamp(20px,3vw,30px); border:1px solid var(--line); border-radius:20px; background:var(--surface); box-shadow:0 8px 28px rgba(16,24,40,.045); }
+.project-featured { grid-column:span 2; background:linear-gradient(135deg,#ffffff,#f0f8f5); border-color:#d3e7df; }
+.project-type { margin:0 0 12px; color:var(--accent); font-size:.7rem; font-weight:750; letter-spacing:.12em; }
+.project-card h3 { margin:0 0 14px; color:var(--ink); font-size:clamp(1.15rem,2vw,1.5rem); line-height:1.35; letter-spacing:-.025em; }
+.project-card h4 { margin:20px 0 8px; font-size:.9rem; color:var(--ink); }
+.project-summary { color:var(--muted); line-height:1.75; }
+.project-card ul:not(.tags) { padding-left:20px; color:var(--muted); }
+.project-card li { margin:7px 0; }
+.project-card .tags { display:flex; flex-wrap:wrap; gap:8px; padding:0; margin:20px 0 0; list-style:none; }
+.project-card .tag { margin:0; }
+@media (max-width:760px) { .project-grid { grid-template-columns:1fr; } .project-featured { grid-column:auto; } }
 
 </style>
 <title>Balamurugan M Portfolio</title>
@@ -353,12 +356,12 @@ dialog .close { margin-top: 12px; }
     <nav class="nav" aria-label="Sections">
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
       <a href="#certificates">Certificates</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark theme">Theme</button>
   </div>
 </header>
  
@@ -366,7 +369,7 @@ dialog .close { margin-top: 12px; }
   <section class="hero wrap">
     <p class="kicker">MBA candidate · General Management</p>
     <h1>Balamurugan M</h1>
-    <p class="lede">MBA candidate with a B.Com in Accounting and Finance, combining practical exposure to accounts payable, financial documentation, accounting entries and inventory reporting with an interest in digital marketing and business analytics. During my internship at Hidesign, I worked with vouchers and supporting documents, learned how financial transactions are recorded in Microsoft Dynamics accounting software, and supported stock movement reporting and stock journal activities. I also bring knowledge of digital advertising, campaign promotion and audience-targeting strategies, supported by skills in Excel, Power BI and financial analysis. I am keen to contribute to a finance, accounts, operations or digital marketing team through accuracy, analytical thinking and a willingness to learn.</p>
+    <p class="lede">MBA candidate and B.Com graduate in Accounting and Finance with practical exposure to accounts payable, financial documentation, Microsoft Dynamics, voucher processing and inventory reporting at Hidesign. My academic work includes financial performance analysis, cross-sector company benchmarking and a social immersion study on small-scale farmers in Puducherry. I also have hands-on learning experience with Microsoft Power Apps, Power Automate and the Microsoft Power Platform, alongside Excel, Power BI, digital advertising and campaign strategy. I bring a blend of financial analysis, business process understanding and digital problem-solving, and am keen to contribute to finance, business operations, analytics or digital transformation roles.</p>
     <ul class="actions">
       <li><a class="btn primary" href="https://www.linkedin.com/in/bala-murugan-m-96aa08281" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></li>
       <li><a class="btn" href="#certificates">View certificates</a></li>
@@ -463,6 +466,52 @@ dialog .close { margin-top: 12px; }
       </div>
     </div>
   </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="sub">Selected MBA projects demonstrating financial analysis, business research, data interpretation and community-focused problem solving.</p>
+      <div class="project-grid">
+        <article class="project-card project-featured">
+          <p class="project-type">MAJOR PROJECT · 2026</p>
+          <h3>A Study on Financial Performance Analysis of Hidesign India Private Limited (FY2020–FY2025)</h3>
+          <p class="project-summary">Evaluated Hidesign’s financial position and performance over five financial years using published financial information and structured financial analysis.</p>
+          <h4>Key areas of analysis</h4>
+          <ul>
+            <li>Comparative and common-size balance sheet analysis.</li>
+            <li>Review of assets, liabilities, shareholders’ equity and debt–equity position.</li>
+            <li>Profitability and liquidity ratio analysis.</li>
+            <li>Year-on-year trends in revenue, operating expenses, total assets, liabilities, equity and net profit.</li>
+          </ul>
+          <ul class="tags"><li class="tag">Financial Statement Analysis</li><li class="tag">Ratio Analysis</li><li class="tag">Trend Analysis</li><li class="tag">Microsoft Excel</li></ul>
+        </article>
+        <article class="project-card">
+          <p class="project-type">MINOR PROJECT · 2026</p>
+          <h3>A Study on Market Growth and Financial Performance of Emerging Sectors in India</h3>
+          <p class="project-summary">Compared 15 listed companies across AI &amp; IT Services, Renewable Energy, and Defence &amp; Aerospace using financial indicators from FY2020 to FY2024.</p>
+          <h4>Methods and contribution</h4>
+          <ul>
+            <li>Compared profitability, revenue growth, EPS growth, ROE and valuation metrics.</li>
+            <li>Applied descriptive statistics, one-way ANOVA and Pearson correlation.</li>
+            <li>Used Min–Max normalisation and K-Means clustering to compare company performance.</li>
+          </ul>
+          <ul class="tags"><li class="tag">Sector Benchmarking</li><li class="tag">ANOVA</li><li class="tag">Correlation</li><li class="tag">K-Means</li></ul>
+        </article>
+        <article class="project-card">
+          <p class="project-type">SOCIAL IMMERSION PROJECT (SIP) · 2026</p>
+          <h3>Socio-Economic Challenges and Solutions for Small-Scale Farmers</h3>
+          <p class="project-summary">A rural agriculture development study in Puducherry, examining livelihood and sustainability challenges through field research in Saptagiri Nagar, Nanamedu and Edayarpalayam.</p>
+          <h4>Field insights and proposed solutions</h4>
+          <ul>
+            <li>Incorporated primary interviews with 45 small-scale farmers across three clusters.</li>
+            <li>Examined labour shortages, pest and wildlife damage, market access, low income and access to government schemes.</li>
+            <li>Proposed farmer producer organisations, community labour cooperatives, coordinated pest management, micro-credit and responsive extension services.</li>
+          </ul>
+          <ul class="tags"><li class="tag">Field Research</li><li class="tag">Primary Data</li><li class="tag">Socio-Economic Analysis</li><li class="tag">Rural Development</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
  
   <section class="section" id="research">
     <div class="wrap">
@@ -490,7 +539,8 @@ dialog .close { margin-top: 12px; }
     <div class="wrap">
       <h2>Skills</h2>
       <dl class="skills">
-        <div class="skill"><dt>Data &amp; analytics</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Advanced Excel</li><li class="tag">Dashboards</li><li class="tag">Pivot Tables</li><li class="tag">VBA</li><li class="tag">Macros</li><li class="tag">Power BI (basic)</li><li class="tag">Tally Prime</li></ul></dd></div>
+        <div class="skill"><dt>Data &amp; analytics</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Advanced Excel</li><li class="tag">Dashboards</li><li class="tag">Pivot Tables</li><li class="tag">VBA</li><li class="tag">Macros</li><li class="tag">Power BI (basic)</li><li class="tag">Tally Prime</li><li class="tag">Financial trend analysis</li><li class="tag">Statistical analysis</li></ul></dd></div>
+        <div class="skill"><dt>Microsoft Power Platform</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Power Apps</li><li class="tag">Power Automate</li><li class="tag">Power Platform fundamentals</li><li class="tag">Low-code app development</li><li class="tag">Workflow automation</li><li class="tag">Business process improvement</li></ul></dd></div>
         <div class="skill"><dt>Digital marketing</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Digital advertising</li><li class="tag">Ad campaign promotion</li><li class="tag">Audience targeting</li><li class="tag">Campaign strategy</li><li class="tag">Content promotion</li><li class="tag">Marketing analytics</li></ul></dd></div>
         <div class="skill"><dt>Finance</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Financial reporting</li><li class="tag">Ratio analysis</li><li class="tag">Budgeting</li><li class="tag">Taxation</li><li class="tag">Auditing</li></ul></dd></div>
         <div class="skill"><dt>Productivity</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Microsoft Word</li><li class="tag">PowerPoint</li><li class="tag">Excel</li><li class="tag">Google Workspace</li></ul></dd></div>
@@ -752,22 +802,7 @@ dialog .close { margin-top: 12px; }
  
 <script>
 (function () {
-  var root = document.documentElement;
- 
-  // Theme toggle: follows the system until the viewer picks one.
-  var toggle = document.getElementById('theme-toggle');
-  function effective() {
-    var t = root.getAttribute('data-theme');
-    if (t) return t;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-  function label() { toggle.textContent = effective() === 'dark' ? 'Light mode' : 'Dark mode'; }
-  toggle.addEventListener('click', function () {
-    root.setAttribute('data-theme', effective() === 'dark' ? 'light' : 'dark');
-    label();
-  });
-  label();
- 
+
   // Copy buttons, with a select-the-text fallback when the clipboard is blocked.
   document.querySelectorAll('.copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
