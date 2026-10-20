@@ -1,1 +1,675 @@
-
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Balamurugan M Portfolio</title>
+<meta name="description" content="Portfolio of Balamurugan M, MBA candidate with a B.Com in Accounting and Finance, digital marketing skills and a Payables internship at Hidesign.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: one left-aligned column that reads like a ledger. Dates and scores sit in a mono column, entries in ruled rows, with an accountant's double rule under the opening block. */
+:root {
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --ink: #15201c;
+  --muted: #55655e;
+  --line: #d3dcd6;
+  --accent: #0e5a47;
+  --accent-ink: #ffffff;
+  --copper: #a85c14;
+  --wash: #e6eee9;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1613;
+    --surface: #15211d;
+    --ink: #e5eee9;
+    --muted: #93a79d;
+    --line: #26362f;
+    --accent: #5cc4a0;
+    --accent-ink: #08130f;
+    --copper: #e0a15b;
+    --wash: #1a2924;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1613;
+  --surface: #15211d;
+  --ink: #e5eee9;
+  --muted: #93a79d;
+  --line: #26362f;
+  --accent: #5cc4a0;
+  --accent-ink: #08130f;
+  --copper: #e0a15b;
+  --wash: #1a2924;
+  color-scheme: dark;
+}
+ 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+ 
+.wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+ 
+/* Top bar */
+.bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.bar .wrap { display: flex; align-items: center; gap: 20px; min-height: 52px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; margin-right: auto; }
+.nav { display: none; gap: 18px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+.nav a:hover { color: var(--accent); }
+@media (min-width: 820px) { .nav { display: flex; } }
+.toggle {
+  font: 500 0.8rem/1 var(--font-mono);
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.toggle:hover { border-color: var(--accent); }
+ 
+/* Hero */
+.hero { padding-block: 56px 40px; }
+.kicker { font: 500 0.82rem/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; }
+h1 { font-size: clamp(2.5rem, 9vw, 4.75rem); font-weight: 700; letter-spacing: -0.025em; }
+.lede { max-width: 62ch; margin-top: 22px; font-size: 1.08rem; color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-block;
+  font: 600 0.92rem/1 var(--font-body);
+  padding: 13px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.btn:hover { background: var(--wash); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { filter: brightness(1.08); background: var(--accent); }
+ 
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0;
+  margin: 44px 0 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 4px double var(--ink);
+}
+.fact { padding: 16px 16px 14px 0; min-width: 0; }
+.fact dt { font: 500 0.72rem/1.3 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.fact dd { margin: 6px 0 0; font: 700 1.7rem/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+.fact dd small { font: 400 0.8rem/1 var(--font-mono); color: var(--muted); }
+ 
+/* Sections */
+.section { padding-block: 44px; }
+.section + .section { border-top: 1px solid var(--line); }
+h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 24px; }
+.sub { color: var(--muted); max-width: 60ch; margin: -12px 0 24px; }
+ 
+/* Ledger rows */
+.rows { border-top: 1px solid var(--line); }
+.row {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 6px 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.when { font: 400 0.84rem/1.6 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.what { min-width: 0; }
+.what h3 { font-size: 1.12rem; font-weight: 700; }
+.what .org { color: var(--muted); margin-top: 2px; }
+.what .score { font: 500 0.88rem/1.5 var(--font-mono); color: var(--copper); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.what ul { margin-top: 10px; display: grid; gap: 6px; }
+.what li { position: relative; padding-left: 18px; }
+.what li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1px; background: var(--accent); }
+@media (max-width: 640px) { .row { grid-template-columns: minmax(0, 1fr); } }
+ 
+.tags, .what ul.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tag, .what .tags li { font: 500 0.8rem/1 var(--font-mono); padding: 7px 9px; border: 1px solid var(--line); border-radius: 3px; background: var(--surface); }
+.what .tags li::before { display: none; }
+ 
+.paper-title { font-family: var(--font-display); font-size: 1.12rem; font-weight: 500; margin-top: 8px; max-width: 58ch; }
+.paper-note { margin-top: 8px; max-width: 62ch; color: var(--muted); }
+ 
+/* Skills */
+.skills { border-top: 1px solid var(--line); }
+.skill { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 6px 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.skill dt { font: 500 0.84rem/1.6 var(--font-mono); color: var(--muted); }
+.skill dd { margin: 0; min-width: 0; }
+@media (max-width: 640px) { .skill { grid-template-columns: minmax(0, 1fr); } }
+ 
+/* Certificates */
+.certs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+@media (max-width: 760px) { .certs { grid-template-columns: minmax(0, 1fr); } }
+.cert { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; display: flex; flex-direction: column; min-width: 0; }
+.cert-shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+  cursor: zoom-in;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+.cert-shot img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.cert-body { padding: 18px 18px 20px; min-width: 0; }
+.cert-issuer { font: 500 0.76rem/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--copper); }
+.cert-body h3 { font-size: 1.12rem; margin-top: 6px; }
+.cert-date { font: 400 0.84rem/1.5 var(--font-mono); color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.cert-body ul { margin-top: 12px; display: grid; gap: 4px; font-size: 0.94rem; }
+.cert-body li { position: relative; padding-left: 18px; }
+.cert-body li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 8px; height: 1px; background: var(--accent); }
+.note { margin-top: 16px; font-size: 0.88rem; color: var(--muted); max-width: 70ch; }
+ 
+h3.group { font-size: 1.1rem; margin: 40px 0 14px; }
+.certs.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 960px) { .certs.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .certs.three { grid-template-columns: minmax(0, 1fr); } }
+.cert.compact .cert-body { display: flex; flex-direction: column; flex: 1; }
+.cert.compact .cert-body h3 { font-size: 1.02rem; }
+.cert.compact .cert-date { margin-top: auto; padding-top: 14px; }
+ 
+/* Contact */
+.contact { border-top: 1px solid var(--line); }
+.contact-row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) auto; align-items: center; gap: 6px 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.contact-row dt { font: 500 0.84rem/1.6 var(--font-mono); color: var(--muted); }
+.contact-row dd { margin: 0; min-width: 0; overflow-wrap: anywhere; font-weight: 500; }
+.copy { font: 500 0.8rem/1 var(--font-mono); color: var(--accent); background: transparent; border: 1px solid var(--line); border-radius: 3px; padding: 8px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+@media (max-width: 640px) {
+  .contact-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .contact-row dt { grid-column: 1 / -1; }
+}
+ 
+footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var(--muted); font-size: 0.88rem; }
+ 
+/* Image viewer */
+dialog { max-width: min(980px, 94vw); width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); }
+dialog::backdrop { background: rgba(0, 0, 0, 0.7); }
+dialog img { display: block; max-width: 100%; max-height: 78vh; margin: 0 auto; background: #ffffff; }
+dialog .close { margin-top: 12px; }
+ 
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+ 
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">Balamurugan M</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark theme">Theme</button>
+  </div>
+</header>
+ 
+<main id="top">
+  <section class="hero wrap">
+    <p class="kicker">MBA candidate · General Management</p>
+    <h1>Balamurugan M</h1>
+    <p class="lede">MBA (General) candidate at Sri Manakula Vinayagar Engineering College, Pondicherry, with a B.Com in Accounting and Finance. I combine digital marketing with Advanced Excel, Power BI, Tally Prime and financial analysis, and I recently completed a three-month internship in the Payables team at Hidesign. I am looking for a corporate role where I can apply both finance and marketing skills.</p>
+    <ul class="actions">
+      <li><a class="btn primary" href="https://www.linkedin.com/in/bala-murugan-m-96aa08281" target="_blank" rel="noopener noreferrer">LinkedIn profile</a></li>
+      <li><a class="btn" href="#certificates">View certificates</a></li>
+    </ul>
+    <dl class="facts">
+      <div class="fact"><dt>B.Com CGPA</dt><dd>9.09 <small>/ 10</small></dd></div>
+      <div class="fact"><dt>MBA Sem II CGPA</dt><dd>8.40 <small>/ 10</small></dd></div>
+      <div class="fact"><dt>Certified courses</dt><dd>10+</dd></div>
+      <div class="fact"><dt>Job simulations</dt><dd>4</dd></div>
+    </dl>
+  </section>
+ 
+  <section class="section" id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="rows">
+        <div class="row">
+          <div class="when">Jul 2025 – Present</div>
+          <div class="what">
+            <h3>Master of Business Administration (General)</h3>
+            <p class="org">Sri Manakula Vinayagar Engineering College, Pondicherry</p>
+            <p class="score">CGPA 8.40 / 10 (Semester II)</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">Jul 2022 – May 2025</div>
+          <div class="what">
+            <h3>Bachelor of Commerce, Accounting and Finance</h3>
+            <p class="org">SRM Institute of Science and Technology, Kattankulathur, Chennai</p>
+            <p class="score">CGPA 9.09 / 10</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">Jun 2021 – May 2022</div>
+          <div class="what">
+            <h3>Higher Secondary Certificate (Class XII)</h3>
+            <p class="org">Petit Seminaire Higher Secondary School, Pondicherry</p>
+            <p class="score">87%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="experience">
+    <div class="wrap">
+      <h2>Experience and leadership</h2>
+      <div class="rows">
+        <div class="row">
+          <div class="when">Jun – Aug 2026<br>3 months</div>
+          <div class="what">
+            <h3>Payables Intern</h3>
+            <p class="org">Hidesign</p>
+            <ul>
+              <li>Completed a three-month internship in the Payables team.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">Aug – Sep 2024</div>
+          <div class="what">
+            <h3>Finance &amp; Operations Intern</h3>
+            <p class="org">NUMED Systems Private Limited</p>
+            <ul>
+              <li>Gained practical exposure to financial documentation, reporting, and business operations.</li>
+              <li>Assisted with data entry, reconciliation, and process documentation tasks.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="when">Oct 2022 – May 2025</div>
+          <div class="what">
+            <h3>Event Organiser</h3>
+            <p class="org">SRM Institute of Science and Technology</p>
+            <ul>
+              <li>Planned, coordinated, and executed multiple academic and cultural events over 3 years.</li>
+              <li>Managed logistics, team coordination, and stakeholder communication.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="research">
+    <div class="wrap">
+      <h2>Research</h2>
+      <div class="rows">
+        <div class="row">
+          <div class="when">2026</div>
+          <div class="what">
+            <h3>Paper Presenter, Pondicherry University</h3>
+            <p class="paper-title">Dynamics of India’s Export Performance and Regional Diversification (2018–2025)</p>
+            <p class="paper-note">Analysed merchandise export trends across 20 regions.</p>
+            <ul class="tags" aria-label="Methods used">
+              <li class="tag">HHI</li>
+              <li class="tag">CAGR</li>
+              <li class="tag">Shift-share decomposition</li>
+              <li class="tag">Resilience metrics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <div class="skill"><dt>Data &amp; analytics</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Advanced Excel</li><li class="tag">Dashboards</li><li class="tag">Pivot Tables</li><li class="tag">VBA</li><li class="tag">Macros</li><li class="tag">Power BI (basic)</li><li class="tag">Tally Prime</li></ul></dd></div>
+        <div class="skill"><dt>Marketing</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Digital marketing</li></ul></dd></div>
+        <div class="skill"><dt>Finance</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Financial reporting</li><li class="tag">Ratio analysis</li><li class="tag">Budgeting</li><li class="tag">Taxation</li><li class="tag">Auditing</li></ul></dd></div>
+        <div class="skill"><dt>Productivity</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Microsoft Word</li><li class="tag">PowerPoint</li><li class="tag">Excel</li><li class="tag">Google Workspace</li></ul></dd></div>
+        <div class="skill"><dt>Soft skills</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Event management</li><li class="tag">Communication</li><li class="tag">Team collaboration</li><li class="tag">Critical thinking</li><li class="tag">Presentation</li></ul></dd></div>
+      </dl>
+    </div>
+  </section>
+ 
+  <section class="section" id="certificates">
+    <div class="wrap">
+      <h2>Certificates</h2>
+      <p class="sub">Four virtual job simulations from Forage, with the work each one covered. Tap an image to enlarge it.</p>
+ 
+      <div class="certs">
+        <article class="cert">
+          <button class="cert-shot" type="button" data-alt="Forage certificate of completion for the Citi U.S. Consumer Cards Job Simulation, 27 July 2026">
+            <img src="img/citi.jpg" alt="Forage certificate of completion for the Citi U.S. Consumer Cards Job Simulation, 27 July 2026" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Citi · Forage</p>
+            <h3>U.S. Consumer Cards Job Simulation</h3>
+            <p class="cert-date">Certificate of completion · 27 Jul 2026</p>
+            <ul>
+              <li>Acquiring customer feedback and market research</li>
+              <li>Preparing the launch of a new personal branded credit card</li>
+              <li>Presenting raw data in a digestible format</li>
+              <li>Presenting insights on a customer base and the charges levied on them</li>
+            </ul>
+          </div>
+        </article>
+ 
+        <article class="cert">
+          <button class="cert-shot" type="button" data-alt="Forage certificate of completion for the Bank of America The Private Bank Job Simulation, 20 July 2026">
+            <img src="img/bofa.jpg" alt="Forage certificate of completion for the Bank of America The Private Bank Job Simulation, 20 July 2026" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Bank of America · Forage</p>
+            <h3>The Private Bank Job Simulation</h3>
+            <p class="cert-date">Certificate of completion · 20 Jul 2026</p>
+            <ul>
+              <li>Client account servicing and communication</li>
+              <li>Uncovering client goals and priorities</li>
+              <li>Matching goals to strategies</li>
+            </ul>
+          </div>
+        </article>
+ 
+        <article class="cert">
+          <button class="cert-shot" type="button" data-alt="Forage certificate of completion for the Tata Data Visualisation: Empowering Business with Effective Insights job simulation, 1 September 2025">
+            <img src="img/tata.jpg" alt="Forage certificate of completion for the Tata Data Visualisation: Empowering Business with Effective Insights job simulation, 1 September 2025" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Tata · Forage</p>
+            <h3>Data Visualisation: Empowering Business with Effective Insights</h3>
+            <p class="cert-date">Certificate of completion · 1 Sep 2025</p>
+            <ul>
+              <li>Framing the business scenario</li>
+              <li>Choosing the right visuals</li>
+              <li>Creating effective visuals</li>
+              <li>Communicating insights and analysis</li>
+            </ul>
+          </div>
+        </article>
+ 
+        <article class="cert">
+          <button class="cert-shot" type="button" data-alt="Forage certificate of completion for the Deloitte Cyber Job Simulation, 5 August 2025">
+            <img src="img/deloitte.jpg" alt="Forage certificate of completion for the Deloitte Cyber Job Simulation, 5 August 2025" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Deloitte · Forage</p>
+            <h3>Cyber Job Simulation</h3>
+            <p class="cert-date">Certificate of completion · 5 Aug 2025</p>
+            <ul>
+              <li>Cyber security</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+ 
+      <h3 class="group">Alison courses</h3>
+      <p class="sub">Ten courses completed on Alison in August and September 2024. Tap an image to enlarge it.</p>
+      <div class="certs three">
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for AI-Driven Digital Marketing Strategies, awarded Sep 2024">
+            <img src="img/alison-ai-driven.jpg" alt="Alison certificate for AI-Driven Digital Marketing Strategies, awarded Sep 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>AI-Driven Digital Marketing Strategies</h3>
+            <p class="cert-date">Awarded · Sep 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for Customer Service Skills, awarded 05 Sep 2024">
+            <img src="img/alison-customer-service-skills.jpg" alt="Alison certificate for Customer Service Skills, awarded 05 Sep 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>Customer Service Skills</h3>
+            <p class="cert-date">Awarded · 05 Sep 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for Leadership &amp; Management Skills For Business - Managing Employees, awarded 01 Sep 2024">
+            <img src="img/alison-leadership.jpg" alt="Alison certificate for Leadership &amp; Management Skills For Business - Managing Employees, awarded 01 Sep 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>Leadership &amp; Management Skills For Business - Managing Employees</h3>
+            <p class="cert-date">Awarded · 01 Sep 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for Warehouse Management: Inventory, Stock and Supply Chains, awarded 31 Aug 2024">
+            <img src="img/alison-warehouse.jpg" alt="Alison certificate for Warehouse Management: Inventory, Stock and Supply Chains, awarded 31 Aug 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>Warehouse Management: Inventory, Stock and Supply Chains</h3>
+            <p class="cert-date">Awarded · 31 Aug 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison diploma for Diploma in Customer Service, awarded 28 Aug 2024">
+            <img src="img/alison-customer-service-diploma.jpg" alt="Alison diploma for Diploma in Customer Service, awarded 28 Aug 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Diploma</p>
+            <h3>Diploma in Customer Service</h3>
+            <p class="cert-date">Awarded · 28 Aug 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for The Business Process Re-engineering (BPR) Guide, awarded 27 Aug 2024">
+            <img src="img/alison-bpr.jpg" alt="Alison certificate for The Business Process Re-engineering (BPR) Guide, awarded 27 Aug 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>The Business Process Re-engineering (BPR) Guide</h3>
+            <p class="cert-date">Awarded · 27 Aug 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for Basics of Financial Management, awarded 24 Aug 2024">
+            <img src="img/alison-basics.jpg" alt="Alison certificate for Basics of Financial Management, awarded 24 Aug 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>Basics of Financial Management</h3>
+            <p class="cert-date">Awarded · 24 Aug 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for Segmentation and Demand Focusing in Marketing Analytics, awarded 16 Aug 2024">
+            <img src="img/alison-segmentation.jpg" alt="Alison certificate for Segmentation and Demand Focusing in Marketing Analytics, awarded 16 Aug 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>Segmentation and Demand Focusing in Marketing Analytics</h3>
+            <p class="cert-date">Awarded · 16 Aug 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison certificate for Business Analysis - Process Modelling, awarded Aug 2024">
+            <img src="img/alison-business-analysis.jpg" alt="Alison certificate for Business Analysis - Process Modelling, awarded Aug 2024" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Certificate</p>
+            <h3>Business Analysis - Process Modelling</h3>
+            <p class="cert-date">Awarded · Aug 2024</p>
+          </div>
+        </article>
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="Alison diploma for Diploma in Human Resources (HR), awarded to Balamurugan M">
+            <img src="img/alison-hr-diploma.jpg" alt="Alison diploma for Diploma in Human Resources (HR), awarded to Balamurugan M" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">Alison · Diploma</p>
+            <h3>Diploma in Human Resources (HR)</h3>
+            <p class="cert-date">Awarded · Aug 2024</p>
+          </div>
+        </article>
+      </div>
+ 
+      <h3 class="group">Other courses and programmes</h3>
+      <div class="certs three">
+        <article class="cert compact">
+          <button class="cert-shot" type="button" data-alt="NoviTech R&amp;D certificate of completion for the 30 Days MasterClass in Data Analytics, 15 October to 24 November 2025">
+            <img src="img/novitech-data-analytics.jpg" alt="NoviTech R&amp;D certificate of completion for the 30 Days MasterClass in Data Analytics, 15 October to 24 November 2025" loading="lazy">
+          </button>
+          <div class="cert-body">
+            <p class="cert-issuer">NoviTech R&amp;D · Certificate of completion</p>
+            <h3>30-Day MasterClass in Data Analytics</h3>
+            <p class="cert-date">15 Oct – 24 Nov 2025</p>
+          </div>
+        </article>
+      </div>
+      <div class="rows" style="margin-top:20px">
+        <div class="row"><div class="when">Mar 2026</div><div class="what"><h3>Career Guidance Session (webinar)</h3><p class="org">Grad Guru Innovation</p></div></div>
+        <div class="row"><div class="when">Undated</div><div class="what"><h3>Junior Grade Typewriting</h3><p class="org">State Board</p></div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="achievements">
+    <div class="wrap">
+      <h2>Achievements</h2>
+      <div class="rows">
+        <div class="row"><div class="when">2026</div><div class="what"><h3>2nd Place, IPL Auction Simulation</h3><p class="org">Pondicherry University</p></div></div>
+        <div class="row"><div class="when">Jun 2025</div><div class="what"><h3>Gold Medallist, Department of Mathematics and Statistics</h3><p class="org">SRM Institute of Science and Technology</p></div></div>
+        <div class="row"><div class="when">Jan 2023</div><div class="what"><h3>1st Place, Debate Competition</h3><p class="org">SRM Institute of Science and Technology</p></div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section class="section" id="interests">
+    <div class="wrap">
+      <h2>Interests and languages</h2>
+      <dl class="skills">
+        <div class="skill"><dt>Areas of interest</dt><dd><ul class="tags" style="margin-top:0"><li class="tag">Financial management</li><li class="tag">Business analytics</li><li class="tag">Auditing &amp; assurance</li><li class="tag">Taxation &amp; compliance</li><li class="tag">Management accounting</li><li class="tag">Entrepreneurship</li><li class="tag">Digital marketing analytics</li></ul></dd></div>
+        <div class="skill"><dt>Languages</dt><dd>Tamil, English</dd></div>
+        <div class="skill"><dt>Location</dt><dd>Chennai / Pondicherry, Tamil Nadu, India</dd></div>
+      </dl>
+    </div>
+  </section>
+ 
+  <section class="section" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <dl class="contact">
+        <div class="contact-row">
+          <dt>LinkedIn</dt>
+          <dd><a href="https://www.linkedin.com/in/bala-murugan-m-96aa08281" target="_blank" rel="noopener noreferrer">linkedin.com/in/bala-murugan-m-96aa08281</a></dd>
+          <button class="copy" type="button" data-copy="https://www.linkedin.com/in/bala-murugan-m-96aa08281">Copy</button>
+        </div>
+        <div class="contact-row">
+          <dt>Email</dt>
+          <dd><a href="mailto:balaken295@gmail.com">balaken295@gmail.com</a></dd>
+          <button class="copy" type="button" data-copy="balaken295@gmail.com">Copy</button>
+        </div>
+        <div class="contact-row">
+          <dt>Phone</dt>
+          <dd>+91 9791747605</dd>
+          <button class="copy" type="button" data-copy="+91 9791747605">Copy</button>
+        </div>
+      </dl>
+    </div>
+  </section>
+</main>
+ 
+<footer>
+  <div class="wrap">© 2026 Balamurugan M</div>
+</footer>
+ 
+<dialog id="viewer" aria-label="Certificate image">
+  <img id="viewer-img" src="" alt="">
+  <button class="btn close" type="button" id="viewer-close">Close</button>
+</dialog>
+ 
+<script>
+(function () {
+  var root = document.documentElement;
+ 
+  // Theme toggle: follows the system until the viewer picks one.
+  var toggle = document.getElementById('theme-toggle');
+  function effective() {
+    var t = root.getAttribute('data-theme');
+    if (t) return t;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function label() { toggle.textContent = effective() === 'dark' ? 'Light mode' : 'Dark mode'; }
+  toggle.addEventListener('click', function () {
+    root.setAttribute('data-theme', effective() === 'dark' ? 'light' : 'dark');
+    label();
+  });
+  label();
+ 
+  // Copy buttons, with a select-the-text fallback when the clipboard is blocked.
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var original = 'Copy';
+      function ok() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = original; }, 1600); }
+      function fallback() {
+        var node = btn.parentNode.querySelector('dd');
+        var range = document.createRange();
+        range.selectNodeContents(node);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'Selected';
+        setTimeout(function () { btn.textContent = original; }, 1600);
+      }
+      try {
+        navigator.clipboard.writeText(text).then(ok, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+ 
+  // Certificate viewer
+  var dlg = document.getElementById('viewer');
+  var big = document.getElementById('viewer-img');
+  document.querySelectorAll('.cert-shot').forEach(function (b) {
+    b.addEventListener('click', function () {
+      big.src = b.querySelector('img').getAttribute('src');
+      big.alt = b.getAttribute('data-alt');
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    });
+  });
+  document.getElementById('viewer-close').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+})();
+</script>
+ 
+</body></html>
